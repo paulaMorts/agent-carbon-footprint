@@ -1,110 +1,109 @@
-<!--START_SECTION:header-->
-<div align="center">
-  <p align="center">
-    <img 
-      alt="DIO Education" 
-      src="https://raw.githubusercontent.com/digitalinnovationone/template-github-trilha/main/.github/assets/logo.webp" 
-      width="100px" 
-    />
-    <h1>Título do Curso ou Projeto</h1>
-  </p>
-</div>
-<!--END_SECTION:header-->
+# 🚀 Trello API Integration with Python
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=DIO&message=Education&color=E94D5F&labelColor=202024" alt="DIO Project" />
-  <a href="NIVEL"><img  src="https://img.shields.io/static/v1?label=Nivel&message=Basico&color=E94D5F&labelColor=202024" alt="Nivel"></a>
+This project demonstrates how to integrate with the Trello API using Python to automate the creation and management of boards, lists, and cards.
 
-</p>
+---
 
-<!--  -->
-<table align="center">
-<thead>
-  <tr>
-    <td>
-        <p align="center">Expert</p>
-        <a href="https://github.com/felipeAguiarCode">
-        <img src="https://avatars0.githubusercontent.com/u/37452836?v=3&s=115" alt="@felipeAguiarCode"><br>
-      </a>
-    </td>
-    <td colspan="3">
-    <p>🎉 10y+ em sistemas comerciais com .NET C# e NODE.JS.
-      <br/>
-     🌟 Desenvolvedor fullstack - Coordenador de educação na DIO
-      <br/>
-    👨‍💻 Foco em front-ends SPA com React, Angular e Vue.js
-    </p>
-      <a 
-      href="https://www.linkedin.com/in/felipe-me/" 
-      align="center">
-           <img 
-            align="center" 
-            alt="Material de Apoio" 
-            src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
-            >
-        </a>
-        <a href="https://www.instagram.com/felipeaguiar.exe/" target="_blank">
-            <img 
-              align="center" 
-              alt="Instagram" 
-              src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"
-            >
-        </a>
-    </td>
-  </tr>
-</thead>
-</table>
-<!--  -->
+## 📖 Project Overview
 
-<br/>
-<br/>
+The Trello API enables developers to automate tasks within Trello, such as creating boards, organizing lists, and managing cards programmatically.
 
-## 💻 Sobre o Projeto
+In this project, authentication is handled using an API Key and Token, allowing secure access to Trello resources.
 
-Vamos construir uma página spa, responsiva, para usar em diversos tipos de micro, pequena e média empresas. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer que faz xxx e yyy
+---
 
-## 📚 Pré-requisitos de Habilidades e Níveis de Conhecimento
+## 🎯 Goals
 
-Antes de ingressar neste conteúdo, é necessário possuir conhecimento prévio nas seguintes áreas:
+- Learn how to consume a REST API
+- Implement token-based authentication
+- Automate board creation in Trello
+- Manage lists and cards using Python
+- Practice API integration and automation concepts
 
-- [habilidades ou conhecimentos prévios necessários] | [Básico, Intermediário, Avançado ou Especialista]
+---
 
-- _Exemplo_:
+## 🛠️ Technologies
 
-  - Java | Básico
-  - Gerenciamento de pacotes | Básico
-  -
+- Python 3.x
+- Requests library
+- Trello REST API
 
-- [Outros pré-requisitos, se aplicável]
+---
 
-- _Exemplo_:
-  - Lógica de programação
-  - Javascript
+## 🔐 Authentication
 
-## 🛠️ Habilidades e Sub-habilidades que vamos aprender neste conteúdo
+To use the Trello API, you must generate:
 
-- [Lista das habilidades principais a serem desenvolvidas]
+- API Key
+- Access Token
 
-  - [Subhabilidades relacionadas, se aplicável]
+You can obtain both at:
+https://trello.com/app-key
 
-- _Exemplo_:
-  - Java
-    - Api Rest
+---
 
-## 🎯 Objetivos e Resultados Esperados
+## 📂 Project Structure
 
-Após a conclusão do curso/projeto, os estudantes estarão aptos a:
+├── main.py
+├── trello_api.py
+├── requirements.txt
+└── README.md
 
-- [Descrição do que os estudantes serão capazes de fazer]
-- [Projetos ou soluções que os estudantes estarão aptos a construir]
+---
 
-<!--START_SECTION:footer-->
+## ▶️ How to Run
 
-<br />
-<br />
+### 1. Clone the repository
 
-<p align="center">
-  <a href="https://www.dio.me/" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/digitalinnovationone/template-github-trilha/main/.github/assets/footer.png" alt="banner"/>
-  </a>
-</p>
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+cd YOUR-REPOSITORY
+```
+
+---
+
+### 2. Install Dependencies
+
+pip install -r requirements.txt
+
+---
+
+### 3. Configure Credentials
+
+API_KEY = "your_api_key"
+TOKEN = "your_token"
+
+---
+
+### 4. Run the application
+
+python main.py
+
+---
+
+## ⚙️ Features
+Create Trello boards
+Create lists inside boards
+Create cards automatically
+Authenticate using API Key and Token
+
+---
+
+## 🧠 Learning Outcomes
+
+This project helped reinforce:
+
+REST API consumption in Python
+Authentication using tokens
+Modular code organization
+Automation with external APIs
+
+---
+
+## 📌 Note
+
+This project was developed as part of a DIO challenge focused on API integration and backend development practices.
+
+## 👨‍💻 Author
+
+Paula Fernandes (Developed as part of a DIO learning challenge 🚀)

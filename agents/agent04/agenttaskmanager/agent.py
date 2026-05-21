@@ -11,7 +11,6 @@ API_KEY = os.getenv('TRELLO_API_KEY')
 API_SECRET = os.getenv('TRELLO_API_SECRET')
 TOKEN = os.getenv('TRELLO_TOKEN')
 
-
 def get_temporal_context():
     now = datetime.now()
     return now.strftime('%Y/%m/%d %H:%M:%S')
@@ -28,7 +27,7 @@ def adicionar_tarefa(nome_da_task: str, descricao_da_task: str, due_date: str):
     client.list_boards()
     # Obter o board (você precisa do ID ou nome do board)
     boards = client.list_boards()
-    meu_board = [b for b in boards if b.name == 'DIO'][0]
+    meu_board = [b for b in boards if b.name == 'ai-project'][0]
 
     # Obter a lista onde quer adicionar o card
     listas = meu_board.list_lists()
@@ -132,27 +131,26 @@ def mudar_status_tarefa(nome_da_task: str, novo_status: str) -> str:
         # Mover
         card_encontrado.change_list(lista_destino.id)
         return f"✅ '{nome_da_task}': {lista_origem.name} → {lista_destino.name}"
-    except Exception as e:
+        except Exception as e:
         return f"❌ Erro: {str(e)}"
 
 root_agent = Agent(
     model='gemini-2.5-flash',
     name='root_agent',
-    description='Agente de Organização de Tarefas',
+    description='A helpful assistant for create tasks.',
     instruction="""
-        Você é um agente de organização de tarefas.     
-        Sua função é receber uma tarefa e criar um card no Trello com o nome e descrição da tarefa.
-        Você deve me perguntar as atividas que tenho no dia e criar um card para cada uma delas.
-        Você inicia a conversa assim que for ativado, perguntando quais são as tarefas do dia.
-        Sempre inicie a conversa perguntando quais são as tarefas do dia informando a data com pela tool get_temporal_context, 
-        e depois vá perguntando se tem mais alguma tarefa, até que o usuário diga que não tem mais tarefas.
-        Suas funções:
-         1. Adicionar novas tarefas com nome e descrição
-          2. Listar todas as tarefas ou filtrar por status
-          3. Marcar tarefas como concluídas
-          4. Remover tarefas da lista
-          5. Mudar o status da tarefa (ex: de "A Fazer" para "Em Andamento" e de "Em Andamento" para "Concluído")
-          6. Gerar contexto temporal (data e hora atual) para organizar as tarefas do dia
-""",
-    tools=[get_temporal_context, adicionar_tarefa, listar_tarefas, mudar_status_tarefa],
+        You are an Agent responsible to create tasks.
+        Your role is to receive a task and create a card in Trello with the task's name and description.
+        You should ask what activities I have planned for the day and create a card for each one.
+        You initiate the conversation as soon as it's activated, asking what the day's tasks are.
+        Always start the conversation by asking what the day's tasks are, providing the date using the get_temporal_context tool.
+        Note that Trello considers the first day of the month as 0, so enter the correct date. 
+        Its functions:
+            1. Add new tasks
+            2. List all tasks or filter by status
+            3. Mark tasks as completed
+            4. Remove tasks from the list
+            5. Change the task status (e.g., from "A fazer" to "Em Andamento" and from "Em Andamento" to "Concluído")
+            6. Generate a temporal context (current date and time) to organize the day's tasks.
+    """,
 )
